@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138522842-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'UA-138522842-1');
+        </script>
+
+        <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+        <meta charset="UTF-8">
+        <title>関数じゃんけん - 広島大学じゃんけんサークル</title>
+        <meta name="viewport" content="width=device-width">
+        <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c|Noto+Sans+SC|Noto+Serif+SC|M+PLUS+1p" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@HU_janken" />
+        <meta property="og:url" content="https://hu-janken.netlify.com/fjancode2.html" />
+        <meta property="og:title" content="関数じゃんけん - 広島大学じゃんけんサークル" />
+        <meta property="og:description" content="関数じゃんけんのルールです" />
+        <meta property="og:image" content="https://hu-janken.netlify.com/img/fjan.png" />
+        <link rel="stylesheet" href="style.css">
+        
+        <!-- ファビコン用設定 -->
+        <meta name="msapplication-square70x70logo" content="favicons/site-tile-70x70.png">
+        <meta name="msapplication-square150x150logo" content="favicons/site-tile-150x150.png">
+        <meta name="msapplication-wide310x150logo" content="favicons/site-tile-310x150.png">
+        <meta name="msapplication-square310x310logo" content="favicons/site-tile-310x310.png">
+        <meta name="msapplication-TileColor" content="#0078d7">
+        <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="favicons/favicon.ico">
+        <link rel="icon" type="image/vnd.microsoft.icon" href="favicons/favicon.ico">
+        <link rel="apple-touch-icon" sizes="57x57" href="favicons/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="favicons/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="favicons/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="favicons/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="favicons/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="favicons/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="favicons/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="favicons/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="36x36" href="favicons/android-chrome-36x36.png">
+        <link rel="icon" type="image/png" sizes="48x48" href="favicons/android-chrome-48x48.png">
+        <link rel="icon" type="image/png" sizes="72x72" href="favicons/android-chrome-72x72.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="favicons/android-chrome-96x96.png">
+        <link rel="icon" type="image/png" sizes="128x128" href="favicons/android-chrome-128x128.png">
+        <link rel="icon" type="image/png" sizes="144x144" href="favicons/android-chrome-144x144.png">
+        <link rel="icon" type="image/png" sizes="152x152" href="favicons/android-chrome-152x152.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="favicons/android-chrome-192x192.png">
+        <link rel="icon" type="image/png" sizes="256x256" href="favicons/android-chrome-256x256.png">
+        <link rel="icon" type="image/png" sizes="384x384" href="favicons/android-chrome-384x384.png">
+        <link rel="icon" type="image/png" sizes="512x512" href="favicons/android-chrome-512x512.png">
+        <link rel="icon" type="image/png" sizes="36x36" href="favicons/icon-36x36.png">
+        <link rel="icon" type="image/png" sizes="48x48" href="favicons/icon-48x48.png">
+        <link rel="icon" type="image/png" sizes="72x72" href="favicons/icon-72x72.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="favicons/icon-96x96.png">
+        <link rel="icon" type="image/png" sizes="128x128" href="favicons/icon-128x128.png">
+        <link rel="icon" type="image/png" sizes="144x144" href="favicons/icon-144x144.png">
+        <link rel="icon" type="image/png" sizes="152x152" href="favicons/icon-152x152.png">
+        <link rel="icon" type="image/png" sizes="160x160" href="favicons/icon-160x160.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="favicons/icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="196x196" href="favicons/icon-196x196.png">
+        <link rel="icon" type="image/png" sizes="256x256" href="favicons/icon-256x256.png">
+        <link rel="icon" type="image/png" sizes="384x384" href="favicons/icon-384x384.png">
+        <link rel="icon" type="image/png" sizes="512x512" href="favicons/icon-512x512.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicons/icon-16x16.png">
+        <link rel="icon" type="image/png" sizes="24x24" href="favicons/icon-24x24.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicons/icon-32x32.png">
+        <link rel="manifest" href="favicons/manifest.json">
+    </head>
+
+    <body class = "post fjancode">
+
+        <header>広島大学じゃんけん<br>サークル</header>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">トップ</a></li>
+                <li><a href="about.html">サークル詳細</a></li>
+                <li><a href="diary01.html">日記とか</a></li>
+                <li><a href="data.html">じゃんけんデータ</a></li>
+                <li><a href="contact.html">お問い合わせ</a></li>
+            </ul>
+        </nav>
+
+        <div class="title"><h1>関数じゃんけん</h1></div>
+
+        <article>
+
+            <h2>関数じゃんけんとは？</h2>
+
+            <p>プログラミング（C言語）における関数を作ってじゃんけんで戦わせる<span class="bold u_case under">超面白競技</span>です！！！！</p>
+            <p><span class="bold">プログラミングができなくても参加可能！！</span></p>
+            <figure><img src="img/depression.jpg">将来が不安な人も</figure>
+            <figure><img src="img/happy.jpg">関数じゃんけんで元気になれるよ！<br><span class="l_case">※個人差があります</span></figure>
+
+            <h2>関数じゃんけんのルール</h2>
+
+            <p><br><br><br><br>・C言語を使用</p>
+            <p>・0から1づつ増える整数n, 現在の勝利数w（どちらもunsigned long int型）を引数に取り、返り値が0, 1, 2のいずれかとなる関数を作成</p>
+            <p>・0はグー、1はチョキ、2はパーとして扱う</p>
+            <p>・関数の名前はpとして作成（対戦時はこちら側で別のものに書き換える　p内で再帰的に呼び出した関数pも書き換え対象）</p>
+            <p><span class="u_case">・関数の外でなんかするのはだめ</span><br>　関数内に収めるように書いてください</p>
+            <p>・ヘッダファイルはstdio.h, math.hを使用する</p>
+            <p>・n=0のとき（最初）は0（グー）を返さなければならない(ifなどを使ってもOK)</p>
+            <p>・勝利数が先に10000に達した方の勝利</p>
+            <p>・nが1000000に達した時点で勝者が決定していない場合は引き分け<br>　勝敗を決めなければならない場合は事前に決めておいた手で代理じゃんけんを行う（詳しくは応募方法へ）</p>
+            <p>・擬似乱数の使用は禁止</p>
+            <p>・相手の手の情報の使用は禁止</p>
+            <p>・マシンの破壊、不具合発生を目的としたコードを含んでいると判断された場合は失格</p>
+            <p>・ログなどのファイルの出力は可能だが、終了時に削除されていなければならない</p>
+            <p>・<span class="bold">上記のルールを自分の関数が満たすか軽くでいいのでテストしてから送るようにしてください（一応こちらでチェックします 多少の間違いであれば修正もします）</p>
+            <p>↓簡単なものではありますが、サンプルです</p>
+            <pre><code class="prettyprint" lang-css>
+int p(unsigned long int n, unsigned long int w){
+    if(w &lt; 500){
+        return (n * (n + 2)) % 3
+    }
+    else{
+        return n % 3;
+    }
+}
+            </code></pre>
+
+            <h2>上のルールがわからなかった人へ</h2>
+
+            <p>関数とは要するにf(x)みたいなやつです<br>今回で言えばp(n)ですね</p>
+            <p>nは0から始まって１づつ増えていく整数です</p>
+            <p>p(n)=0でグー、1でチョキ、2がパーを表します</p>
+            <p>そのp(n)を作って戦わせるのが関数じゃんけんです</p>
+            <p>p(n)は0,1,2のいずれかでないといけませんが、最終的に3で割った余りを出すようにするので大丈夫です</p>
+            <p>整数にならなくても小数点以下は切り捨てるので問題ありません</p>
+            <p>しかし、<span class="bold">負の値になってしまうとどうしようもなくなる</span>ので注意してください</p>
+            <p>そしてもう一つ<br><span class="under">aのb乗はa^bとしてください</span></p>
+            <p>√（ルート）とかは変換で出てきますが、これはどうしようもないので・・・</p>
+            <p>n+1の3乗とかしたいときは<br>(n+1)^3<br>という風にまとまりは()で閉じるようにしてください</p>
+            <p>例を載せておきます</p>
+            <p>例１．p(n)=2n+5<br>例２．p(n)=(5n+2)^(n+1)<br>例３．p(n)=√((n+3)×n)+5n</p>
+            <p>3で割ったあまりを出したりコードに書き換えたりするのはこちらでやります</p>
+
+            <h2>ようこそ</h2>
+
+            <p>ルールが把握できたら、これで君も<span class="bold">関数じゃんけんマスターだ！！！</span></p>
+            <figure><img src="img/fjanmaster.png">↑関数じゃんけんマスター<br>多分こんなの</figure>
+            <figure><br><br><img src="img/fjanbanchou.png">↑関数じゃんけんマスターの永遠のライバル<br>関数じゃんけん番長</figure>
+            <p><br><br><br>対戦用のコードや今までの関数は<a href="data.html">こちら</a>から</p>
+            <p>質問等は<a href="contact.html">お問い合わせページ</a>か<a href="https://twitter.com/HU_janken?s=17">じゃんサーのTwitter</a>へどうぞ</p>
+
+        </article>
+
+        <footer>&copy; 2019 Hiroshima University Janken Club</footer>
+
+    </body>
+</html>

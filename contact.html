@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138522842-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'UA-138522842-1');
+        </script>
+        
+        <meta charset="UTF-8">
+        <title>お問い合わせ - 広島大学じゃんけんサークル</title>
+        <meta name="viewport" content="width=device-width">
+        <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c|Noto+Sans+SC|Noto+Serif+SC|M+PLUS+1p" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body class = "contact">
+
+        <header>広島大学じゃんけん<br>サークル</header>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">トップ</a></li>
+                <li><a href="about.html">サークル詳細</a></li>
+                <li><a href="diary01.html">日記とか</a></li>
+                <li><a href="data.html">じゃんけんデータ</a></li>
+                <li><a href="contact.html">お問い合わせ</a></li>
+            </ul>
+        </nav>
+
+        <div class="title"><h1>お問い合わせ</h1></div>
+
+        <article>
+            
+            <p>お問い合わせはこちらから</p>
+            <p>返信が必要ない場合はメールアドレス空欄で構いません</p>
+
+            <form netlify>
+                <p>
+                    <label>
+                        名前：
+                        <input type="text" name="name">
+                    </label>
+                </p>
+        
+                <p>
+                    <label>
+                        メールアドレス：
+                        <input type="email" name="mail">
+                    </label>
+                </p>
+        
+                <p>
+                    <label>
+                        コメント：
+                        <textarea name="comment"></textarea>
+                    </label>
+            </p>
+        
+                <p><input type="submit" value="送信"></p>
+            </form>
+
+        </article>
+
+        <footer>&copy; 2019 Hiroshima University Janken Club</footer>
+
+    </body>
+</html>

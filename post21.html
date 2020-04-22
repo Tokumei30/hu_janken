@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138522842-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'UA-138522842-1');
+        </script>
+        
+        <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+        
+        <meta charset="UTF-8">
+        <title>地獄のじゃんけん大喜利</title>
+        <meta name="viewport" content="width=device-width">
+        <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c|Noto+Sans+SC|Noto+Serif+SC|M+PLUS+1p" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@HU_janken" />
+        <meta property="og:url" content="https://hu-janken.netlify.com/post21.html" />
+        <meta property="og:title" content="地獄のじゃんけん大喜利 - 広島大学じゃんけんサークル" />
+        <meta property="og:description" content="じゃんサーの記事です" />
+        <meta property="og:image" content="https://hu-janken.netlify.com/img/ogiri_odai_2.jpg" />
+        <link rel="stylesheet" href="style.css">
+        
+        <!-- ファビコン用設定 -->
+        <meta name="msapplication-square70x70logo" content="favicons/site-tile-70x70.png">
+        <meta name="msapplication-square150x150logo" content="favicons/site-tile-150x150.png">
+        <meta name="msapplication-wide310x150logo" content="favicons/site-tile-310x150.png">
+        <meta name="msapplication-square310x310logo" content="favicons/site-tile-310x310.png">
+        <meta name="msapplication-TileColor" content="#0078d7">
+        <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="favicons/favicon.ico">
+        <link rel="icon" type="image/vnd.microsoft.icon" href="favicons/favicon.ico">
+        <link rel="apple-touch-icon" sizes="57x57" href="favicons/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="favicons/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="favicons/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="favicons/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="favicons/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="favicons/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="favicons/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="favicons/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="36x36" href="favicons/android-chrome-36x36.png">
+        <link rel="icon" type="image/png" sizes="48x48" href="favicons/android-chrome-48x48.png">
+        <link rel="icon" type="image/png" sizes="72x72" href="favicons/android-chrome-72x72.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="favicons/android-chrome-96x96.png">
+        <link rel="icon" type="image/png" sizes="128x128" href="favicons/android-chrome-128x128.png">
+        <link rel="icon" type="image/png" sizes="144x144" href="favicons/android-chrome-144x144.png">
+        <link rel="icon" type="image/png" sizes="152x152" href="favicons/android-chrome-152x152.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="favicons/android-chrome-192x192.png">
+        <link rel="icon" type="image/png" sizes="256x256" href="favicons/android-chrome-256x256.png">
+        <link rel="icon" type="image/png" sizes="384x384" href="favicons/android-chrome-384x384.png">
+        <link rel="icon" type="image/png" sizes="512x512" href="favicons/android-chrome-512x512.png">
+        <link rel="icon" type="image/png" sizes="36x36" href="favicons/icon-36x36.png">
+        <link rel="icon" type="image/png" sizes="48x48" href="favicons/icon-48x48.png">
+        <link rel="icon" type="image/png" sizes="72x72" href="favicons/icon-72x72.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="favicons/icon-96x96.png">
+        <link rel="icon" type="image/png" sizes="128x128" href="favicons/icon-128x128.png">
+        <link rel="icon" type="image/png" sizes="144x144" href="favicons/icon-144x144.png">
+        <link rel="icon" type="image/png" sizes="152x152" href="favicons/icon-152x152.png">
+        <link rel="icon" type="image/png" sizes="160x160" href="favicons/icon-160x160.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="favicons/icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="196x196" href="favicons/icon-196x196.png">
+        <link rel="icon" type="image/png" sizes="256x256" href="favicons/icon-256x256.png">
+        <link rel="icon" type="image/png" sizes="384x384" href="favicons/icon-384x384.png">
+        <link rel="icon" type="image/png" sizes="512x512" href="favicons/icon-512x512.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicons/icon-16x16.png">
+        <link rel="icon" type="image/png" sizes="24x24" href="favicons/icon-24x24.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicons/icon-32x32.png">
+        <link rel="manifest" href="favicons/manifest.json">
+    </head>
+
+    <body class = "post">
+
+        <header>広島大学じゃんけん<br>サークル</header>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">トップ</a></li>
+                <li><a href="about.html">サークル詳細</a></li>
+                <li><a href="diary01.html">日記とか</a></li>
+                <li><a href="data.html">じゃんけんデータ</a></li>
+                <li><a href="contact.html">お問い合わせ</a></li>
+            </ul>
+        </nav>
+
+        <div class="title"><h1>地獄のじゃんけん大喜利</h1></div>
+
+        <article>
+
+            <time datetime="2019-12-21"><i class="far fa-clock"></i></i>2019-12-21</time>
+            <p class="writer"><i class="far fa-user"></i>とくめい</p>
+
+            <figure><img class="icon" src="img/icon/tokumei.png"></figure>
+
+            <p>こんにちは とくめいです</p>
+            <p><a href="post18.html">前回の私の記事</a>が9月のものなので、およそ3ヶ月ぶりですね</p>
+            <p>ところで、今回の記事から<span class="bold">吹き出しが使えるようになりました！</span></p>
+            <div class="serif">
+                <div class="speaker"><img class="icon" src="img/icon/tokumei.png">
+                    <p>とくめい</p>
+                </div>
+                <div class="serif-left">
+                    <p>アイコンも出せます！</p>
+                </div>
+            </div>
+            <div class="serif">
+                <div class="serif-right">
+                    <p>右からも話せます！</p>
+                </div>
+                <div class="speaker"><img class="icon" src="img/icon/tokumei.png">
+                    <p>とくめい</p>
+                </div>
+            </div>
+            <p>表現の幅が広がりました</p>
+
+            <h2>地獄、スタート</h2>
+            <p>12月18日の活動は粘土で始まりました</p>
+            <figure><img src="img/clay_1.JPG"></figure>
+            <p>年を取るにつれ、粘土を触る機会は少なくなると思います</p>
+            <p>久しぶりにやるとめちゃくちゃ面白いですね</p>
+            <figure><img src="img/clay_2.JPG"></figure>
+            <p>出来上がった作品は、それぞれ活動の終わりに発表することにしました</p>
+            <p><br><br><br>その後は自分で考案したじゃんけんを何個かやりましたが、くそつまらなかったです</p>
+            <figure><img src="img/sanmoku.JPG">三目じゃんけん<br>このほかにも目隠しじゃんけんとかしたけどまじで面白くなかった</figure>
+            <p>そしてついに、あの企画がやってきました</p>
+            <div class="serif">
+                <div class="speaker"><img class="icon" src="img/icon/tokumei.png">
+                    <p>とくめい</p>
+                </div>
+                <div class="serif-left">
+                    <p>始めようか・・・<br><span class="bold">じゃんけん大喜利</span>を</p>
+                </div>
+            </div>
+
+            <div class="serif">
+                <div class="serif-right">
+                    <p>は？マジでやんの？</p>
+                </div>
+                <div class="speaker"><img class="icon" src="img/icon/taka.png">
+                    <p>タカ</p>
+                </div>
+            </div>
+
+            <div class="serif">
+                <div class="speaker"><img class="icon" src="img/icon/tokumei.png">
+                    <p>とくめい</p>
+                </div>
+                <div class="serif-left">
+                    <p>当たり前でしょ<br>事前に言ってたんだから</p>
+                </div>
+            </div>
+
+            <p>この日の活動内容については事前に伝えてありました</p>
+            <figure><img src="img/line_1.jpg">見なかった奴が悪い</figure>
+
+            <p>戦いが・・・来る・・・！</p>
+
+            <h2>参加メンバー</h2>
+
+            <figure><p><img class="icon" src="img/icon/tokumei.png"><br><span class="u_case black">とくめい</span></p></figure>
+            <figure><p><img class="icon" src="img/icon/taka.png"><br><span class="u_case black">タカ</span></p></figure>
+            <figure><P><img class="icon" src="img/icon/tasogare.png"><br><span class="u_case black">たそがれ</span></P></figure>
+            <div class="serif">
+                <div class="speaker"><img class="icon" src="img/icon/tokumei.png">
+                    <p>とくめい</p>
+                </div>
+                <div class="serif-left">
+                    <p>２人しか来んかった</p>
+                </div>
+            </div>
+
+            <h2>絶望</h2>
+            <p>最初のお題はこちら</p>
+            <figure><img src="img/ogiri_odai_1.jpg">こんなじゃんけんは嫌だ</figure>
+
+            <p>全人類が３秒で思いつくようなお題ですが、<span class="bold">めちゃくちゃ難しかったです</span></p>
+            <div class="serif">
+                <div class="speaker"><img class="icon" src="img/icon/taka.png">
+                    <p>タカ</p>
+                </div>
+                <div class="serif-left">
+                    <p>え～・・・</p>
+                </div>
+            </div>
+            <div class="serif">
+                <div class="speaker"><img class="icon" src="img/icon/tasogare.png">
+                    <p>たそがれ</p>
+                </div>
+                <div class="serif-left">
+                    <p>思いつかん</p>
+                </div>
+            </div>
+
+            <p>恐らく３人とも人生初の大喜利<br>なかなか答えが出ません</p>
+            <p>このままではいけないと思ったので、先陣を切ることにしました</p>
+            <p>行くぞオラァ！</p>
+            <div class="serif">
+                <div class="speaker"><img class="icon" src="img/icon/tokumei.png">
+                    <p>とくめい</p>
+                </div>
+                <div class="serif-left">
+                    <p>さっきのやつ<br><img src="img/sanmoku.JPG"></p>
+                </div>
+            </div>
+            <div class="serif">
+                <div class="serif-right">
+                    <p>・・・</p>
+                </div>
+                <div class="speaker"><img class="icon" src="img/icon/tasogare.png">
+                    <p>たそがれ</p>
+                </div>
+            </div>
+            <div class="serif">
+                <div class="speaker"><img class="icon" src="img/icon/tokumei.png">
+                    <p>とくめい</p>
+                </div>
+                <div class="serif-left">
+                    <p>嫌だったでしょ！三目のやつ！</p>
+                </div>
+            </div>
+
+            <p>だめでした</p>
+            <p>でもボーダーは下がりました</p>
+
+            <div class="serif">
+                <div class="speaker"><img class="icon" src="img/icon/taka.png">
+                    <p>タカ</p>
+                </div>
+                <div class="serif-left">
+                    <p>行きます</p>
+                </div>
+            </div>
+            <div class="serif">
+                <div class="serif-right">
+                    <p>いっけええええ！</p>
+                </div>
+                <div class="speaker"><img class="icon" src="img/icon/tokumei.png">
+                    <p>とくめい</p>
+                </div>
+            </div>
+            <div class="serif">
+                <div class="speaker"><img class="icon" src="img/icon/taka.png">
+                    <p>タカ</p>
+                </div>
+                <div class="serif-left">
+                    <p><span class="bold">This way...</span></p>
+                </div>
+            </div>
+            <figure><img src="img/ogiri_taka_1.JPG"></figure>
+            <div class="serif">
+                <div class="serif-right">
+                    <p>ちっちゃ！</p>
+                </div>
+                <div class="speaker"><img class="icon" src="img/icon/tokumei.png">
+                    <p>とくめい</p>
+                </div>
+            </div>
+            <div class="serif">
+                <div class="serif-right">
+                    <p>何ですかこれ</p>
+                </div>
+                <div class="speaker"><img class="icon" src="img/icon/tasogare.png">
+                    <p>たそがれ</p>
+                </div>
+            </div>
+            <div class="serif">
+                <div class="serif-right">
+                    <p>ゴ〇さん？</p>
+                </div>
+                <div class="speaker"><img class="icon" src="img/icon/tokumei.png">
+                    <p>とくめい</p>
+                </div>
+            </div>
+            <div class="serif">
+                <div class="speaker"><img class="icon" src="img/icon/taka.png">
+                    <p>タカ</p>
+                </div>
+                <div class="serif-left">
+                    <p><span class="bold">こういうネタがある</span></p>
+                </div>
+            </div>
+            <div class="serif">
+                <div class="serif-right">
+                    <p>ちっちゃく書いてたのは面白かったけど・・・</p>
+                </div>
+                <div class="speaker"><img class="icon" src="img/icon/tokumei.png">
+                    <p>とくめい</p>
+                </div>
+            </div>
+            <div class="serif">
+                <div class="serif-right">
+                    <p><span class="bold">不可</span></p>
+                </div>
+                <div class="speaker"><img class="icon" src="img/icon/tasogare.png">
+                    <p>たそがれ</p>
+                </div>
+            </div>
+
+            <p><br><br>限界を感じたので次のお題へ<br><br></p>
+
+            <figure><img src="img/ogiri_odai_2.jpg">サザエさんついに最終回！<br>最後のじゃんけんは何を出した？</figure>
+
+            <p>ここからお題を ふるた（副代表） に送信することに</p>
+            
+            <div class="serif">
+                <div class="serif-right">
+                    <p>返信来ました</p>
+                </div>
+                <div class="speaker"><img class="icon" src="img/icon/tokumei.png">
+                    <p>とくめい</p>
+                </div>
+            </div>
+
+            <div class="serif">
+                <div class="speaker"><img class="icon" src="img/icon/furuta.png">
+                    <p>ふるた</p>
+                </div>
+                <div class="serif-left">
+                    <span class="u_case bold">タラちゃん</span>
+                </div>
+            </div>
+
+            <div class="serif">
+                <div class="serif-right">
+                    <p>勢いがある</p>
+                </div>
+                <div class="speaker"><img class="icon" src="img/icon/tasogare.png">
+                    <p>たそがれ</p>
+                </div>
+            </div>
+
+            <div class="serif">
+                <div class="serif-right">
+                    <p>クイズ得意だから大喜利も行けるんじゃね？</p>
+                </div>
+                <div class="speaker"><img class="icon" src="img/icon/taka.png">
+                    <p>タカ</p>
+                </div>
+            </div>
+            <div class="serif">
+                <div class="serif-right">
+                    <p>なるほど</p>
+                </div>
+                <div class="speaker"><img class="icon" src="img/icon/tokumei.png">
+                    <p>とくめい</p>
+                </div>
+            </div>
+
+            <p>※これ以降の彼の回答は不発だったので、もう出てきません</p>
+
+            <p>割と面白かったので、続きたいところ</p>
+
+            <div class="serif">
+                <div class="speaker"><img class="icon" src="img/icon/tokumei.png">
+                    <p>とくめい</p>
+                </div>
+                <div class="serif-left">
+                    <p>行けます！</p>
+                </div>
+            </div>
+
+            <div class="serif">
+                <div class="speaker"><img class="icon" src="img/icon/tokumei.png">
+                    <p>とくめい</p>
+                </div>
+                <div class="serif-left">
+                    <img src="img/ogiri_tokumei_1.JPG">
+                </div>
+            </div>
+            
+            <div class="serif">
+                <div class="serif-right">
+                    <p>えぇ・・・</p>
+                </div>
+                <div class="speaker"><img class="icon" src="img/icon/tasogare.png">
+                    <p>たそがれ</p>
+                </div>
+            </div>
+
+            <div class="serif">
+                <div class="speaker"><img class="icon" src="img/icon/tokumei.png">
+                    <p>とくめい</p>
+                </div>
+                <div class="serif-left">
+                    <p>引くな</p>
+                </div>
+            </div>
+
+            <p>引かれました（もちろん不可）</p>
+            <p><br><br>そして最後の回答へ</p>
+
+            <div class="serif">
+                <div class="speaker"><img class="icon" src="img/icon/tasogare.png">
+                    <p>たそがれ</p>
+                </div>
+                <div class="serif-left">
+                    <img src="img/ogiri_tasogare_1.JPG">
+                </div>
+            </div>
+
+            <div class="serif">
+                <div class="serif-right">
+                    <p><span class="u_case bold">面白っ</span></p>
+                </div>
+                <div class="speaker"><img class="icon" src="img/icon/tokumei.png">
+                    <p>とくめい</p>
+                </div>
+            </div>
+
+            <p>本日初「秀」が出ました（※面白さには個人差があります）</p>
+
+            <div class="serif">
+                <div class="speaker"><img class="icon" src="img/icon/tasogare.png">
+                    <p>たそがれ</p>
+                </div>
+                <div class="serif-left">
+                    <p>よーし！</p>
+                </div>
+            </div>
+
+            <p>もし面白い回答が一つも出なかったら没企画になってたわけなので、彼は救世主と呼べるでしょう</p>
+            <p>もはやチームプレイです<br><br><br><br><br></p>
+
+            <figure><img src="img/ogiri_odai_4.jpg">じゃんけん日本一<br>どんな人？</figure>
+
+            <div class="serif">
+                <div class="speaker"><img class="icon" src="img/icon/tokumei.png">
+                    <p>とくめい</p>
+                </div>
+                <div class="serif-left">
+                    <img src="img/ogiri_tokumei_2.JPG">
+                </div>
+            </div>
+
+            <div class="serif">
+                <div class="serif-right">
+                    <p>不可</p>
+                </div>
+                <div class="speaker"><img class="icon" src="img/icon/tasogare.png">
+                    <p>たそがれ</p>
+                </div>
+            </div>
+            
+            <div class="serif">
+                <div class="speaker"><img class="icon" src="img/icon/tokumei.png">
+                    <p>とくめい</p>
+                </div>
+                <div class="serif-left">
+                    <img src="img/ogiri_tokumei_3.JPG">
+                </div>
+            </div>
+            
+            <div class="serif">
+                <div class="serif-right">
+                    <p>不可</p>
+                </div>
+                <div class="speaker"><img class="icon" src="img/icon/taka.png">
+                    <p>タカ</p>
+                </div>
+            </div>
+
+            <div class="serif">
+                <div class="speaker"><img class="icon" src="img/icon/tokumei.png">
+                    <p>とくめい</p>
+                </div>
+                <div class="serif-left">
+                    <p>本田さんでもダメなのか・・・</p>
+                </div>
+            </div>
+
+            <p>あのじゃんけんキングの力を借りてもダメでした</p>
+            <p><span class="bold">しかし、あきらめるわけにはいきません！</span></p>
+            
+            <div class="serif">
+                <div class="speaker"><img class="icon" src="img/icon/tokumei.png">
+                    <p>とくめい</p>
+                </div>
+                <div class="serif-left">
+                    <img src="img/ogiri_tokumei_4.JPG">
+                </div>
+            </div>
+            
+            <div class="serif">
+                <div class="speaker"><img class="icon" src="img/icon/tokumei.png">
+                    <p>とくめい</p>
+                </div>
+                <div class="serif-left">
+                    <p>どうだ！</p>
+                </div>
+            </div>
+
+            <div class="serif">
+                <div class="serif-right">
+                    <p>それだったら</p>
+                </div>
+                <div class="speaker"><img class="icon" src="img/icon/tasogare.png">
+                    <p>たそがれ</p>
+                </div>
+            </div>
+            
+            <div class="serif">
+                <div class="serif-right">
+                    <img src="img/ogiri_tasogare_2.JPG">
+                </div>
+                <div class="speaker"><img class="icon" src="img/icon/tasogare.png">
+                    <p>たそがれ</p>
+                </div>
+            </div>
+            
+            <div class="serif">
+                <div class="speaker"><img class="icon" src="img/icon/tokumei.png">
+                    <p>とくめい</p>
+                </div>
+                <div class="serif-left">
+                    <p>負けた・・・</p>
+                </div>
+            </div>
+
+            <p>やめたくなりました<br><br><br></p>
+
+            <figure><img src="img/ogiri_odai_5.jpg">じゃんけん大臣、どんなの？</figure>
+            
+            <div class="serif">
+                <div class="speaker"><img class="icon" src="img/icon/taka.png">
+                    <p>タカ</p>
+                </div>
+                <div class="serif-left">
+                    <p><span class="u_case bold">負けたら辞任</span></p>
+                </div>
+            </div>
+            
+            <div class="serif">
+                <div class="serif-right">
+                    <p>恐ろしい</p>
+                </div>
+                <div class="speaker"><img class="icon" src="img/icon/tasogare.png">
+                    <p>たそがれ</p>
+                </div>
+            </div>
+            
+            <div class="serif">
+                <div class="speaker"><img class="icon" src="img/icon/tokumei.png">
+                    <p>とくめい</p>
+                </div>
+                <div class="serif-left">
+                    <figure><img src="img/ogiri_tokumei_5.JPG"></figure>
+                </div>
+            </div>
+            
+            <div class="serif">
+                <div class="serif-right">
+                    <p>？？？</p>
+                </div>
+                <div class="speaker"><img class="icon" src="img/icon/tasogare.png">
+                    <p>たそがれ</p>
+                </div>
+            </div>
+            
+            <div class="serif">
+                <div class="speaker"><img class="icon" src="img/icon/tokumei.png">
+                    <p>とくめい</p>
+                </div>
+                <div class="serif-left">
+                    <p><span class="bold">環境大臣のやつ</span>なんだけど・・・</p>
+                </div>
+            </div>
+
+            <div class="serif">
+                <div class="serif-right">
+                    <p>ああ～<br>気づかなかったわ</p>
+                </div>
+                <div class="speaker"><img class="icon" src="img/icon/taka.png">
+                    <p>タカ</p>
+                </div>
+            </div>
+
+            <p>流行り（少し遅い）に乗っても、うまくいくとは限りませんね<br><br><br></p>
+
+            <figure><img src="img/ogiri_odai_6.jpg">じゃんけんの起源</figure>
+            <p>これが最後のお題です</p>
+
+            <div class="serif">
+                <div class="speaker"><img class="icon" src="img/icon/taka.png">
+                    <p>タカ</p>
+                </div>
+                <div class="serif-left">
+                    <img src="img/ogiri_taka_2.JPG">
+                </div>
+            </div>
+            
+            <div class="serif">
+                <div class="serif-right">
+                    <p>なるほどね<br>少しうまい気がする</p>
+                </div>
+                <div class="speaker"><img class="icon" src="img/icon/tokumei.png">
+                    <p>とくめい</p>
+                </div>
+            </div>
+
+            <p>しかし、残念ながら不可でした</p>
+            <p>何が面白いか　私にはほとんどわからなくなっていました</p>
+            
+            <div class="serif">
+                <div class="speaker"><img class="icon" src="img/icon/tokumei.png">
+                    <p>疲れた<br>とくめい</p>
+                </div>
+                <div class="serif-left">
+                    <p><span class="bold">来た気がするわ</span></p>
+                </div>
+            </div>
+            
+            <div class="serif">
+                <div class="speaker"><img class="icon" src="img/icon/tokumei.png">
+                    <p>頭の悪い<br>とくめい</p>
+                </div>
+                <div class="serif-left">
+                    <p><span class="bold">これはいける！！！<br>いきまああああす！！！</span></p>
+                </div>
+            </div>
+
+            <p>行ける気がしてたみたいです</p>
+
+            <div class="serif">
+                <div class="speaker"><img class="icon" src="img/icon/tokumei.png">
+                    <p>あほ</p>
+                </div>
+                <div class="serif-left">
+                    <img src="img/ogiri_tokumei_6.JPG">
+                </div>
+            </div>
+
+            <p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
+
+            <div class="serif">
+                <div class="serif-right">
+                    <p><span class="u_case bold">何ですかそれ</span></p>
+                </div>
+                <div class="speaker"><img class="icon" src="img/icon/tasogare.png">
+                    <p>たそがれ</p>
+                </div>
+            </div>
+
+            <p>せめて知っといてくれ</p>
+
+            <h2>おまけ</h2>
+            <p>みんなの粘土作品です</p>
+            <figure><img src="img/clay_3.JPG">タカ</figure>
+            <figure><img src="img/clay_4.JPG">たそがれ</figure>
+            <figure><img src="img/clay_5.JPG">とくめい</figure>
+
+
+            <h2>お知らせ</h2>
+            <p>じゃんけんサークルは常に新規メンバーを募集しています<br>日程は<a href="about.html">こちら</a>から確認してください</p>
+            <p>副代表が「じゃんけんサークルに検証してほしい説」を募集しているみたいです<br><a href="contact.html">お問い合わせフォーム</a>か<a href="https://twitter.com/hu_janken?lang=ja">Twitter</a>によろしくお願いします</p>
+            <br><br><a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+        </article>
+
+        <section class="adjacent">
+            <article>
+                <a href="post22.html">
+                    <p>次の記事</p>
+                    <figure><img src="img/freeimgproject.png"></figure>
+                    <h3>じゃんけんフリー素材</h3>
+                </a>
+            </article>
+            
+            <article>
+                <a href="post20.html">
+                    <p>前の記事</p>
+                    <figure><img src="img/champion.png"></figure>
+                    <h3>配列王！！</h3>
+                </a>
+            </article>
+        </section>
+
+        <footer>&copy; 2019 Hiroshima University Janken Club</footer>
+
+    </body>
+</html>
