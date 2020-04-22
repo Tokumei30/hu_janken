@@ -184,10 +184,15 @@ h2 {
 
 .about {
     grid-row: about;
+    grid-column: 1 / -1;
     height: 100v;
     justify-self: center;
     align-self: center;
     margin-top: 50px;
+    background-image: url("img/ogiri_odai_1.jpg");
+    background-size: cover;
+    text-align: center;
+    height: 100vh;
 }
 
 .about h2 {
@@ -196,9 +201,12 @@ h2 {
     line-height: 1em;
     text-decoration: none;
     border: none;
-    margin: auto;
+    margin-top: 60px;
     font-size: 40px;
+    font-weight: bold;
     transition: 800ms;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
 .about p {
@@ -206,11 +214,19 @@ h2 {
     font-size: 25px;
     color: #949494;
     transition: 800ms;
+    margin-left: 15px;
+    margin-right: 15px;
+    text-align: left;
 }
-.about figure {
-    transition: 800ms;
-    transition-delay: 500ms;
+
+.about a {
+    font-family: 'Kosugi', sans-serif;
+    color: #003f88;
+    text-align: center;
+    margin-left: 15px;
+    margin-right: 15px;
 }
+
 
 /* お知らせ */
 .notice {
