@@ -2,7 +2,7 @@
 $(function () {
     /* 画像 */
     var img_ta = new Image();
-    img_ta.src = "img/_to_about.png";
+    img_ta.src = "img/to_about.png";
 
     var img_tf = new Image();
     img_tf.src = "img/to_fjan.png";
