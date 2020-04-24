@@ -3,8 +3,9 @@
 /* テキストの自動拡大を無効化 */
 body {
     -webkit-text-size-adjust: none;
-    text-size-adjust: none;
-    background-color: #fffcf6;
+    -moz-text-size-adjust: none;
+     -ms-text-size-adjust: none;
+         text-size-adjust: none;
 }
 
 /* 基本設定 */
@@ -25,8 +26,10 @@ body {
     grid-template-rows:
         [head] 200px
         [title] auto
-        [about] auto
-        [notice] auto
+        [to_about] auto
+        [to_about_image] auto
+        [to_fjan] auto
+        [to_fjan_image] auto
         [recent] auto
         [tweet] auto
         [adjacent]auto
@@ -34,6 +37,11 @@ body {
     grid-row-gap: 15px;
     row-gap: 15px;
     font-family: sans-serif;
+}
+
+body.top {
+    background-color: #ffffff;
+    transition: 800ms;
 }
 
 /* パーツの配置 */
@@ -75,7 +83,9 @@ nav ul {
     grid-template-columns: repeat(3, auto);
     grid-template-rows: auto auto;
     grid-column-gap: 12px;
-    column-gap: 12px;
+    -webkit-column-gap: 12px;
+       -moz-column-gap: 12px;
+            column-gap: 12px;
 }
 
 nav a {
@@ -83,6 +93,7 @@ nav a {
     text-decoration: none;
     font-size: 12px;
     font-weight: bold;
+    -webkit-transition: color 100ms 0s ease;
     transition: color 100ms 0s ease;
 }
 
@@ -95,7 +106,8 @@ figure.hero {
     grid-column: 1 / -1;
     grid-row: title;
     position: relative;
-    animation: appear_from_bot 1500ms 0s ease;
+    -webkit-animation: appear_from_bot 1500ms 0s ease;
+            animation: appear_from_bot 1500ms 0s ease;
 }
 
 figure.hero:after {
@@ -106,14 +118,17 @@ figure.hero:after {
     right: 0;
     bottom: 0;
     left: 0;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(40%, #ffffff00), to(#fffcf6));
     background-image: linear-gradient(#ffffff00 40%, #fffcf6);
 }
 
 figure.hero img {
     height: 70vh;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     vertical-align: bottom;
-    filter: brightness(75%);
+    -webkit-filter: brightness(75%);
+            filter: brightness(75%);
     z-index: -1;
     position: relative; /* Edge用 */
 }
@@ -150,7 +165,8 @@ div.title {
     font-family: 'Noto Serif SC', serif;
     font-size: 30px;
     font-style: oblique;
-    animation: appear_from_bot 2500ms 1s both;
+    -webkit-animation: appear_from_bot 2500ms 1s both;
+            animation: appear_from_bot 2500ms 1s both;
 }
 
 /* 小見出し */
@@ -170,72 +186,143 @@ h2 {
 
 .top h2 {
     border: none;
-    color: #4c4c4c;
+    color: #000000;
     font-family: 'Kosugi', sans-serif;
     font-size: 22px;
-    font-weight: normal;
-    text-align: center;
-    margin-left: none;
-    margin-right: none;
+    font-weight: bold;
+    text-align: left;
+    margin-top: 60px;
+    font-size: 50px;
+    margin-left: 15px;
+    margin-right: 15px;
     margin-top: 50px;
-}
-
-/* じゃんサーとは */
-
-.about {
-    grid-row: about;
-    grid-column: 1 / -1;
-    height: 100v;
-    justify-self: center;
-    align-self: center;
-    margin-top: 50px;
-    background-image: url("img/ogiri_odai_1.jpg");
-    background-size: cover;
-    text-align: center;
-    height: 100vh;
-}
-
-.about h2 {
-    text-align: center;
-    color: #000000;
     line-height: 1em;
     text-decoration: none;
-    border: none;
-    margin-top: 60px;
-    font-size: 40px;
-    font-weight: bold;
+    -webkit-transition: 800ms;
     transition: 800ms;
-    margin-left: 15px;
-    margin-right: 15px;
 }
 
-.about p {
+/* トップページの紹介 基本設定 */
+div.to{
+    grid-column: 1 / -1;
+    justify-self: center;
+    align-self: center;
+    margin: auto;
+    text-align: center;
+    width: 100vw;
+}
+
+.to {
+    grid-column: 1 / -1;
+    transition: 800ms;
+}
+.top .to p {
     font-family: 'Kosugi', sans-serif;
-    font-size: 25px;
+    font-size: 20px;
     color: #949494;
+    -webkit-transition: 800ms;
     transition: 800ms;
     margin-left: 15px;
-    margin-right: 15px;
+    margin-right: 50px;
+    margin-top: 20px;
     text-align: left;
+    line-height: 25px;
 }
 
-.about a {
+.top .to a {
     font-family: 'Kosugi', sans-serif;
     color: #003f88;
     text-align: center;
-    margin-left: 15px;
-    margin-right: 15px;
+    font-weight: bold;
 }
 
+/* サークル詳細へ */
+div.to_about {
+    grid-row: to_about / span 2;
+    height: 660px;
+}
+
+.to_about div {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.to_about h2 {
+    font-size: 50px;
+}
+
+.to_about p {
+}
+
+figure.to_about_image {
+    grid-row: to_about_image;
+    transition: 1s;
+    height: 40vh;
+    z-index: -1;
+}
+.to_about_image img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    transition: 1s;
+    object-position: center right;
+}
+
+/* 関数じゃんけんへ */
+.to_fjan {
+    grid-row: to_fjan / span 2;
+    height: 660px;
+    transition-delay: 400ms;
+}
+
+.to_fjan h2 {
+    font-size: 50px;
+    color: #ffffff;
+}
+
+.to_fjan p {
+    text-shadow: rgb(0, 0, 0) 1px 0px 1px,
+                 rgb(0, 0, 0) 0.540302px 0.841471px 1px,
+                 rgb(0, 0, 0) -0.416147px 0.909297px 1px, 
+                 rgb(0, 0, 0) -0.989992px 0.14112px 1px, 
+                 rgb(0, 0, 0) -0.653644px -0.756802px 1px, 
+                 rgb(0, 0, 0) 0.283662px -0.958924px 1px, 
+                 rgb(0, 0, 0) 0.96017px -0.279415px 1px;
+}
+
+.to_fjan a {
+    color: #0077ff;
+    text-shadow: rgb(0, 0, 0) 1px 0px 1px,
+                 rgb(0, 0, 0) 0.540302px 0.841471px 1px,
+                 rgb(0, 0, 0) -0.416147px 0.909297px 1px, 
+                 rgb(0, 0, 0) -0.989992px 0.14112px 1px, 
+                 rgb(0, 0, 0) -0.653644px -0.756802px 1px, 
+                 rgb(0, 0, 0) 0.283662px -0.958924px 1px, 
+                 rgb(0, 0, 0) 0.96017px -0.279415px 1px;
+}
+
+figure.to_fjan_image {
+    grid-row: to_fjan_image;
+    transition: 1s;
+    width: 100vw;
+    z-index: -1;
+}
+.to_fjan_image img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    transition: 1.5s ease;
+    object-position: top center;
+}
 
 /* お知らせ */
+/*
 .notice {
     grid-row: notice;
     display: grid;
     padding: 3px;
     grid-template-rows: auto auto;
     grid-row-gap: 10px;
-    animation: appear_from_bot 100ms 0s ease both;
+    -webkit-animation: appear_from_bot 100ms 0s ease both;
+            animation: appear_from_bot 100ms 0s ease both;
 }
 
 .notice  p {
@@ -244,26 +331,31 @@ h2 {
     border: solid 2px #ffcb1e;
     border-radius: 8px;
 }
+*/
 
 /* 記事一覧 */
-section {
+section.recent {
     grid-row: recent;
     display: grid;
     grid-template-rows: repeat(4, auto);
     grid-row-gap: 10px;
     row-gap: 10px;
+    transition: 800ms;
 }
 
 article {
-    border: solid 2px #ffcb1e;
     border-radius: 8px;
     background-color: #ffffff;
-    animation: appear_from_left 500ms s ease both;
+    margin-left: 15px;
+    margin-right: 15px;
+    -webkit-animation: appear_from_left 500ms s ease both;
+            animation: appear_from_left 500ms s ease both;
 }
 
 section img {
     height: 100px;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     border-top-right-radius: 6px;
     border-top-left-radius: 6px;
 }
@@ -279,8 +371,12 @@ section a:hover {
 }
 
 /* ツイート */
-.twitter-timeline {
+.twitter {
     grid-row: tweet;
+}
+
+.twitter h2 {
+    font-size: 30px;
 }
 
 /* 詳細ページ */
@@ -457,7 +553,8 @@ body.fjancode::after {
 img.icon {
     width: 100px;
     height: 100px;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     border-radius: 50%;
     background-position: center center;
     border: solid 3px #ffc422;
@@ -485,7 +582,8 @@ img.icon {
 .serif img.icon {
     width: 60px;
     height: 60px;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     border-radius: 50%;
     background-position: center center;
     border: solid 3px #ffc422;
@@ -582,6 +680,7 @@ img.icon {
 #loading {
     width: 100vw;
     height: 100vh;
+    -webkit-transition: all 1s;
     transition: all 1s;
     background-color: rgb(236, 188, 115);
     position: fixed;
@@ -610,7 +709,9 @@ p.tracking-in-contract {
 body {
     grid-template-columns: 0.1fr repeat(8, 1fr) 0.1fr;
     grid-column-gap: 5%;
-    column-gap: 5%;
+    -webkit-column-gap: 5%;
+       -moz-column-gap: 5%;
+            column-gap: 5%;
     grid-template-rows:
         [head] 180px
         [title] auto
@@ -642,7 +743,9 @@ nav ul {
     grid-template-columns: repeat(3, auto);
     grid-template-rows: auto auto;
     grid-column-gap: 12px;
-    column-gap: 12px;
+    -webkit-column-gap: 12px;
+       -moz-column-gap: 12px;
+            column-gap: 12px;
     grid-row-gap: 15px;
     row-gap: 15px;
 }
@@ -728,7 +831,8 @@ article time, article > p {
 article > figure {
     width: 600px;
     margin: 0 auto;
-    object-fit: contain;
+    -o-object-fit: contain;
+       object-fit: contain;
 }
 
 /* PC 記事ページ 前後記事 */
@@ -736,7 +840,9 @@ section.adjacent {
     grid-row: adjacent;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 10px;
-    column-gap: 10px;
+    -webkit-column-gap: 10px;
+       -moz-column-gap: 10px;
+            column-gap: 10px;
 }
 
 /* PC コード用 */
@@ -771,12 +877,32 @@ p.tracking-in-contract {
 
 /* アニメーション */
 
+@-webkit-keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 @keyframes appear {
     0% {
         opacity: 0;
     }
     100% {
         opacity: 1;
+    }
+}
+
+@-webkit-keyframes appear_from_bot {
+    0% {
+        opacity: 0;
+        top: 50px;
+    }
+    100% {
+        opacity: 1;
+        top: 0;
     }
 }
 
@@ -791,6 +917,17 @@ p.tracking-in-contract {
     }
 }
 
+@-webkit-keyframes appear_from_left {
+    0% {
+        opacity: 0;
+        margin-right: 10px;
+    }
+    100% {
+        opacity: 1;
+        margin-right: 0;
+    }
+}
+
 @keyframes appear_from_left {
     0% {
         opacity: 0;
@@ -799,6 +936,20 @@ p.tracking-in-contract {
     100% {
         opacity: 1;
         margin-right: 0;
+    }
+}
+
+@-webkit-keyframes tracking-in-contract {
+    0% {
+        letter-spacing: 1em;
+        opacity: 0;
+    }
+    40% {
+        opacity: 0.6;
+    }
+    80% {
+        letter-spacing: normal;
+        opacity: 1;
     }
 }
 

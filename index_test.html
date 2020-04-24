@@ -76,31 +76,14 @@
         <script>
             window.addEventListener('load', function () {
                 const flex_hujc = document.getElementById('loading');
-                const page = document.getElementsByTagName('body');
                 flex_hujc.classList.add('EOL');
-                page.classList.add('loaded');
             })
         </script>
         <!-- jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-        <script>
-            $(function () {
-                    $('.about h2, .about p, .about figure').css("opacity", "0");
-                    $(window).scroll(function () {
-                        $(".about").each(function () {
-                            var imgPos = $(this).offset().top;
-                            var scroll = $(window).scrollTop();
-                            var windowHeight = $(window).height();
-                            if (scroll > imgPos - windowHeight + windowHeight / 5) {
-                                $("h2, p, figure", this).css("opacity", "1");
-                            } else {
-                                $("h2, p, figure", this).css("opacity", "0");
-                            }
-                        });
-                    });
-                });
-        </script>
+        <!-- アニメーション -->
+        <script src="scripts/js/top_animation.js"></script>
     </head>
 
     
@@ -129,12 +112,27 @@
 
         <h1>手は有限、可能性は無限</h1>
 
-        <div class="about">
-            <h2>データ<br>×<br>じゃんけん</h2>
-            <p>広島大学じゃんけんサークルでは、日々のじゃんけんで実力をつけています。<br>じゃんけんは運だけではありません。</p>
-            <a href="about.html">＞詳細はこちら</a>
+        <div class="to_about to">
+            <div>
+                <h2>じゃん<br>けん<br>ぽん</h2>
+                <p>広島大学じゃんけんサークルのメンバーは、日々のじゃんけんで実力をつけています。<br>じゃんけんは運だけではありません。</p>
+                <a href="about.html">詳細はこちら</a>
+            </div>
         </div>
+        <figure class="to_about_image to">
+            <img src="img/_to_about.png">
+        </figure>
         
+        <div class="to_fjan to">
+            <div>
+                <h2>じゃんけんは<br>進化する</h2>
+                <p>数秒間で数万を超えるチョキを出してみよう。</p>
+                <a href="fjan_rule.html">関数じゃんけんとは？</a>
+            </div>
+        </div>
+        <figure class="to_fjan_image to">
+            <img src="img/to_fjan.png">
+        </figure>
 
         <!--
         <div class="notice">
@@ -160,9 +158,10 @@
             </p>
         </div>
         -->
-        <section>
+        <section class="recent to">
 
             <h2>最近の記事</h2>
+            <p>くだらないかどうかはあなた次第。</p>
             <article>
                 <a href="#">
                     <figure><img src="img/freeimgproject.png"></figure>
@@ -185,8 +184,11 @@
             </article>
 
         </section>
-        
-        <a class="twitter-timeline" data-height="500" href="https://twitter.com/HU_janken?ref_src=twsrc%5Etfw">Tweets by HU_janken</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <div class="twitter">
+            <h2>広島大学じゃんけんサークルの<br>Twitterです</h2>
+            <a class="twitter-timeline" data-height="500" href="https://twitter.com/HU_janken?ref_src=twsrc%5Etfw">Tweets by HU_janken</a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
 
         <footer>&copy; 2019 Hiroshima University Janken Club</footer>
         <script>
